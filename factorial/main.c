@@ -7,6 +7,10 @@ int main(int argc, char **argv) {
     fprintf(stderr, "Insert a number to see its factorial.\n");
     return 1;
   }
+  if (atoi(argv[1]) < 0) {
+    fprintf(stderr, "Number must be greater than 0");
+    return 1;
+  }
   mpz_t number;
   mpz_init(number);
   mpz_set_ui(number, atoi(argv[1]));
